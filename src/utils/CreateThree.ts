@@ -3,7 +3,7 @@
  */
 
 
-import { Clock, Color, ColorRepresentation, DefaultLoadingManager, Object3D, OrthographicCamera, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer, WebGLRenderTarget } from 'three';
+import { Clock, ColorRepresentation, DefaultLoadingManager, OrthographicCamera, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from 'three';
 
 import { getGPUTier } from 'detect-gpu';
 import Stats from 'three/examples/jsm/libs/stats.module';
@@ -416,7 +416,7 @@ export default class CreateThree {
     this.isRunning = false
     return this
   }
-  #animate = (now?: DOMHighResTimeStamp, xrframe?: XRFrame) => {
+  #animate = (_now?: DOMHighResTimeStamp, xrframe?: XRFrame) => {
     if (!this.isRunning) return;
     this.stats?.begin()
     this.frameCount++

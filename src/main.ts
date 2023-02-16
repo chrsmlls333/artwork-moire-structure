@@ -1,7 +1,7 @@
 import './style.css'
 // import fbxFile from './Fancy Bus Stop MASTER.fbx?url'
-import fbxFileGirders from './models/Rooftop-Girders.fbx?url'
-import fbxFileMats from './models/Rooftop-Mats.fbx?url'
+// import fbxFileGirders from './models/Rooftop-Girders.fbx?url'
+// import fbxFileMats from './models/Rooftop-Mats.fbx?url'
 import daeFileMats from './models/Rooftop-Mats.dae?url'
 import daeFileGirdersDeform from './models/Rooftop-Girders-Deformed.dae?url'
 import daeFileACUnits from './models/Rooftop-ACUnits.dae?url'
@@ -11,9 +11,9 @@ import daeFileOuterShell from './models/Rooftop-OuterShell.dae?url'
 
 import * as THREE from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
-import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry';
+// import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry';
 
-import { CSG } from 'three-csg-ts';
+// import { CSG } from 'three-csg-ts';
 import ProjectedMaterial, { ProjectedMaterialParameters } from 'three-projected-material';
 
 import CreateThree from './utils/CreateThree';
@@ -158,7 +158,7 @@ Promise.all([
       if ((c as THREE.Mesh).isMesh) {
         const child = (c as THREE.Mesh);
         child.material = createProjectionMaterial(app.camera, texture, 0x0000FF, 0.2);
-        app.onUpdate(c3 => {
+        app.onUpdate(() => {
           if (projectingModel && Math.random() < 0.005) (child.material as ProjectedMaterial).project(child);
         });
         // (child.material as ProjectedMaterial).project(child)
@@ -238,7 +238,7 @@ Promise.all(config.map(({url}) => loadCollada(url)))
         if (preset.replaceWProjMat != false) {
           let projmat = createProjectionMaterial(app.camera, texture, preset.bgColor, preset.bgOpacity, preset.projMatSetting || {});
           child.material = projmat;
-          app.onUpdate(c3 => {
+          app.onUpdate(() => {
             if (projectingModel && Math.random() < config[i].refreshChance) 
               (child.material as ProjectedMaterial).project(child);
           });
@@ -331,7 +331,7 @@ document.addEventListener( 'click', (ev) => {
 
 
 
-app.onUpdate(c3 => {
+app.onUpdate(() => {
   // if (projectingModel) {
   //   paintedMeshes.forEach( mesh => {
   //     if (mesh.name != "Sky Box" && Math.random() < 0.03) 
