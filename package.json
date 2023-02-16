@@ -1,0 +1,30 @@
+{
+  "name": "moire-structure",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tweakpane/core": "^1.1.4",
+    "@types/dat.gui": "^0.7.7",
+    "@types/three": "^0.149.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "datauritoblob": "^1.0.0",
+    "detect-gpu": "^5.0.11",
+    "lil-gui": "^0.18.0",
+    "mp4-wasm": "^1.0.6",
+    "stats.js": "^0.17.0",
+    "three": "^0.149.0",
+    "three-csg-ts": "^3.1.11",
+    "three-projected-material": "^2.2.1",
+    "touches": "^1.2.2",
+    "tweakpane": "^3.1.4"
+  }
+}
