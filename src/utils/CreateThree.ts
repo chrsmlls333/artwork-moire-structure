@@ -215,7 +215,10 @@ export default class CreateThree {
 
     //
     if (options.gui) {
-      this.gui = new Pane({ title: 'Parameters' });
+      this.gui = new Pane({ 
+        title: 'Parameters',
+        expanded: false
+      });
       if (options.guiClosed) this.gui.expanded = false;
 
       const cf = this.gui.addFolder({
